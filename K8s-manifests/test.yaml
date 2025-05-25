@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug-pod
+  namespace: app
+spec:
+  containers:
+  - name: debug
+    image: ubuntu
+    command: ["sleep", "3600"]
