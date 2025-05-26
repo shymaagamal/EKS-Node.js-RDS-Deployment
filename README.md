@@ -318,10 +318,13 @@ kubectl port-forward service/argocd-server -n argocd 8080:443
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
-- and here i added my application 
+- Here is a screenshot of my application dashboard in ArgoCD:
 ![](/images/argocd.png)
-- and my deployment contains only one replicas 
+- The initial deployment had only one replica running:
 ![](/images/podsofnodejs.png)
+- After updating the `app_deployment.yaml` to scale the replicas to two and pushing the change to GitHub, ArgoCD automatically synced the changes, and the deployment was updated:
+![](/images/scaled.png)
+
 
 
 # References
