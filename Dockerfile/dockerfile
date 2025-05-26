@@ -7,7 +7,7 @@ COPY ./application/package*.json ./
 RUN npm install
 
 COPY ../application ./
-RUN echo "Testing GitHub Actions workflow" > /app/test.txt
+RUN echo "Testing GitHub Actions workflow sha" > /app/test.txt
 
 EXPOSE 3000
 
