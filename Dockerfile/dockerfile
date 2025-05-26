@@ -8,6 +8,7 @@ RUN npm install
 
 COPY ../application ./
 
+
 EXPOSE 3000
 
 CMD ["node", "index.js"]
