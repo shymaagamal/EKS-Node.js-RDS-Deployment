@@ -300,6 +300,30 @@ K8s-manifests/loadbalancer.yaml
 
 ![alt text](/images/app.png)
 
+## ArgoCD 
+### 🛠️ Steps to install ArgoCD
+- using HELM:
+```bash
+helm repo add argo https://argoproj.github.io/argo-helm
+helm repo update
+kubectl create namespace argocd
+helm install argocd argo/argo-cd --namespace argocd
+```
+- In order to access the server UI:
+```bash
+kubectl port-forward service/argocd-server -n argocd 8080:443
+```
+- open the browser on ``http://localhost:8080``
+- After reaching the UI the first time you can login with username: admin and the random password generated during the installation. You can find the password by running
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
+- and here i added my application 
+![](/images/argocd.png)
+- and my deployment contains only one replicas 
+![](/images/podsofnodejs.png)
+
+
 # References
 - [permissions of EKS cluster](https://docs.aws.amazon.com/eks/latest/userguide/cluster-iam-role.html#create-service-role)
 
