@@ -2,6 +2,10 @@
 ## Overview
 This project demonstrates how to deploy a Node.js application on an Amazon EKS (Elastic Kubernetes Service) cluster that securely connects to an Amazon RDS database. The architecture ensures all components run within private subnets for security, with seamless secret management using the External Secrets Operator and container images pulled directly from Amazon ECR (Elastic Container Registry).
 
+## 🧱 Architecture Diagram
+![](./images/diagram.png)
+
+
 <h2 style="color: teal;">Step-by-Step Guide</h2>
 
 ## EKS  Setup 
